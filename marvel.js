@@ -309,7 +309,7 @@ var MBBkList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 1
 var b2 = MBBkList.indexOf(activeB);
 var bkAbb = ['Gen', 'Exod', 'Lev', 'Num', 'Deut', 'Josh', 'Judg', 'Ruth', '1 Sam', '2 Sam', '1 Kgs', '2 Kgs', '1 Chr', '2 Chr', 'Ezra', 'Neh', 'Esth', 'Job', 'Ps', 'Prov', 'Eccl', 'Song', 'Isa', 'Jer', 'Lam', 'Ezek', 'Dan', 'Hos', 'Joel', 'Amos', 'Obad', 'Jonah', 'Mic', 'Nah', 'Hab', 'Zeph', 'Hag', 'Zech', 'Mal', 'Matt', 'Mark', 'Luke', 'John', 'Acts', 'Rom', '1 Cor', '2 Cor', 'Gal', 'Eph', 'Phil', 'Col', '1 Thess', '2 Thess', '1 Tim', '2 Tim', 'Titus', 'Phlm', 'Heb', 'Jas', '1 Pet', '2 Pet', '1 John', '2 John', '3 John', 'Jude', 'Rev'];
 b2 = bkAbb[b2];
-document.title = b2 + ' ' + activeC + ':' + activeV + ' [' + mod.toUpperCase() + ']' + ' - OpenGNT.com';
+document.title = b2 + ' ' + activeC + ':' + activeV + ' [' + mod.toUpperCase() + ']' + ' - Marvel.bible';
 //document.getElementById('activeVerse').innerHTML = mod.toUpperCase() + ' - ' + b2 + ' ' + activeC + ':' + activeV;
 document.getElementById('activeVerse').innerHTML = b2 + ' ' + activeC + ':' + activeV;
 document.getElementById('activeVerseWrap').style.display = '';
@@ -1688,9 +1688,9 @@ return '' +
 function getFooter() {
 return '' +
 '<h4>' +
-'<a href="javascript:void(0)" onclick="window.open(\'https://biblebento.com/contact/contactform.php\')">Copyright 2018 Eliran Wong</a>' +
+'<sup><a href="javascript:void(0)" onclick="window.open(\'https://biblebento.com/contact/contactform.php\')">support | feedback | contact</a></sup>' +
 '<br>' +
-'<sub><a href="javascript:void(0)" onclick="window.open(\'https://github.com/eliranwong/OpenGNT\')">[Source, License & Credits]</a></sub>' +
+'<sub>Partnership with:</sub><br><sup><a href="javascript:void(0)" onclick="window.open(\'https://BibleBento.com\')">BibleBento.com</a> <a href="javascript:void(0)" onclick="window.open(\'https://OpenGNT.com\')">OpenGNT.com</a></sup>' +
 '</h4>' +
 '<span id="lastElement"></span>' +
 '';
@@ -1699,9 +1699,9 @@ return '' +
 function getFooter2() {
 var footer = '' +
 '<h4>' +
-'<a href="javascript:void(0)" onclick="window.open(\'https://biblebento.com/contact/contactform.php\')">Copyright 2018 Eliran Wong</a>' +
+'<sup><a href="javascript:void(0)" onclick="window.open(\'https://biblebento.com/contact/contactform.php\')">support | feedback | contact</a></sup>' +
 '<br>' +
-'<sub><a href="javascript:void(0)" onclick="window.open(\'https://github.com/eliranwong/OpenGNT\')">[Source, License & Credits]</a></sub>' +
+'<sub>Partnership with:</sub><br><sup><a href="javascript:void(0)" onclick="window.open(\'https://BibleBento.com\')">BibleBento.com</a> <a href="javascript:void(0)" onclick="window.open(\'https://OpenGNT.com\')">OpenGNT.com</a></sup>' +
 '</h4>' +
 '<span id="lastElement"></span>' +
 '';
@@ -1715,9 +1715,9 @@ return footer;
 function getFooter3() {
 var footer = '' +
 '<h4>' +
-'<a href="javascript:void(0)" onclick="window.open(\'https://biblebento.com/contact/contactform.php\')">Copyright 2018 Eliran Wong</a>' +
+'<sup><a href="javascript:void(0)" onclick="window.open(\'https://biblebento.com/contact/contactform.php\')">support | feedback | contact</a></sup>' +
 '<br>' +
-'<sub><a href="javascript:void(0)" onclick="window.open(\'https://github.com/eliranwong/OpenGNT\')">[Source, License & Credits]</a></sub>' +
+'<sub>Partnership with:</sub><br><sup><a href="javascript:void(0)" onclick="window.open(\'https://BibleBento.com\')">BibleBento.com</a> <a href="javascript:void(0)" onclick="window.open(\'https://OpenGNT.com\')">OpenGNT.com</a></sup>' +
 '</h4>' +
 '<span id="lastElement"></span>' +
 '';
