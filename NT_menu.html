@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Parallel Passage</title>
+
+<style>
+
+body {
+font-size: 130%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+li a,ch {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50%;
+}
+
+h4 {
+    text-align: center;
+    color: #354d48;
+}
+
+h1 {
+color: #4b0c25;
+}
+
+h2 {
+color: #4b0c25;
+}
+
+
+/* unvisited link */
+a:link {
+    color: #0b6078;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #0b6078;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: #0b6078;
+    text-decoration: none;
+}
+
+/* chapter link */
+ch {
+    color: #0b6078;
+}
+
+/* chapter link - hover */
+ch:hover {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+
+<script src="/marvel.js?v=2.5"></script>
+
+</head>
+
+<body onload="window.parent.scrollTo(0,0);">
+
+<h2>Parallel Passage</h2>
+
+<h4><a href='OT_menu.html'>Old Testament</a> | New Testament</h4>
+
+<p>
+<ul>
+<li><ch onclick="bcv(40,1,1)">Matthew</ch></li>
+<li><ch onclick="bcv(41,1,1)">Mark</ch></li>
+<li><ch onclick="bcv(42,1,1)">Luke</ch></li>
+<li><ch onclick="bcv(43,1,1)">John</ch></li></ul></p><p><ul>
+<li><ch onclick="bcv(44,1,1)">Acts</ch></li></ul></p><p><ul>
+<li><ch onclick="bcv(45,1,1)">Romans</ch></li>
+<li><ch onclick="bcv(46,1,1)">1 Corinthians</ch></li>
+<li><ch onclick="bcv(47,1,1)">2 Corinthians</ch></li>
+<li><ch onclick="bcv(48,1,1)">Galatians</ch></li>
+<li><ch onclick="bcv(49,1,1)">Ephesians</ch></li>
+<li><ch onclick="bcv(50,1,1)">Philippians</ch></li>
+<li><ch onclick="bcv(51,1,1)">Colossians</ch></li>
+<li><ch onclick="bcv(52,1,1)">1 Thessalonians</ch></li>
+<li><ch onclick="bcv(53,1,1)">2 Thessalonians</ch></li>
+<li><ch onclick="bcv(54,1,1)">1 Timothy</ch></li>
+<li><ch onclick="bcv(55,1,1)">2 Timothy</ch></li>
+<li><ch onclick="bcv(56,1,1)">Titus</ch></li>
+<li><ch onclick="bcv(57,1,1)">Philemon</ch></li>
+<li><ch onclick="bcv(58,1,1)">Hebrews</ch></li></ul></p><p><ul>
+<li><ch onclick="bcv(59,1,1)">James</ch></li>
+<li><ch onclick="bcv(60,1,1)">1 Peter</ch></li>
+<li><ch onclick="bcv(61,1,1)">2 Peter</ch></li>
+<li><ch onclick="bcv(62,1,1)">1 John</ch></li>
+<li><ch onclick="bcv(63,1,1)">2 John</ch></li>
+<li><ch onclick="bcv(64,1,1)">3 John</ch></li>
+<li><ch onclick="bcv(65,1,1)">Jude</ch></li></ul></p><p><ul>
+<li><ch onclick="bcv(66,1,1)">Revelation</ch></li>
+</ul>
+</p>
+
+<p>&nbsp;</p>
+
+<hr><div id="footer"></div>
+
+<script>document.getElementById("footer").innerHTML = getFooter();</script>
+
+</body></html>
