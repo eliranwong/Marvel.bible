@@ -173,10 +173,20 @@ else {targetFrame.contentWindow.scrollTo(0,targetHeight);}
 function resizeIframe(id) {
 var iframe = document.getElementById(id);
 var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+
 var lastElement = innerDoc.getElementById('lastElement');
+if (lastElement != null) {
 var frameHeight = lastElement.offsetTop;
 var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 iframe.style.height = (frameHeight + screenHeight - 100) + 'px';
+}
+else {
+var lastElement2 = innerDoc.getElementById('lastElement2');
+var frameHeight = lastElement2.offsetTop;
+var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+iframe.style.height = (frameHeight + screenHeight - 100) + 'px';
+}
+
 }
 
 function launchIntoFullscreen(element) {
@@ -205,10 +215,10 @@ function fullScreenSwitch() {
 
 if (getMobileOperatingSystem() == 'iOS') {
 	if (window.navigator.standalone) {
-	messageUser('<h3>Exit Fullscreen in iOS/iPad/iPhone</h3>', '<p>To enter non-fullscreen mode in iOS/iPad/iPhone, simply navigate to BibleBento.com with a web browser (e.g. mobile Sarfari), rather than using home screen bookmark.</p>');
+	messageUser('<h3>Exit Fullscreen in iOS/iPad/iPhone</h3>', '<p>To enter non-fullscreen mode in iOS/iPad/iPhone, simply navigate to Marvel.bible with a web browser (e.g. mobile Sarfari), rather than using home screen bookmark.</p>');
 	}
 	else {
-	messageUser('<h3>Enter Fullscreen in iOS/iPad/iPhone</h3>', '<p>To enter fullscreen mode in iOS/iPad/iPhone, simply start BibleBento.com with a home screen bookmark directly.</p><p>How to save a home screen bookmark?<br>1) Open BibleBento.com first with mobile Sarfari.<br>2) Use action menu to save a bookmark of BibleBento.com with option "Add to Home Screen".</p>');
+	messageUser('<h3>Enter Fullscreen in iOS/iPad/iPhone</h3>', '<p>To enter fullscreen mode in iOS/iPad/iPhone, simply start Marvel.bible with a home screen bookmark directly.</p><p>How to save a home screen bookmark?<br>1) Open Marvel.bible first with mobile Sarfari.<br>2) Use action menu to save a bookmark of Marvel.bible with option "Add to Home Screen".</p>');
 	}
 }
 else {
@@ -250,7 +260,7 @@ window.parent.tempMod = mod; window.parent.mod = mod;
 window.parent.tempB = bk; window.parent.activeB = bk; 
 window.parent.tempC = 1; window.parent.activeC = 1; 
 window.parent.tempV = 1; window.parent.activeV = 1; 
-window.parent.document.title = 'Bible - ' + window.parent.mod.toUpperCase() + ' - BibleBento.com';
+window.parent.document.title = 'Bible - ' + window.parent.mod.toUpperCase() + ' - Marvel.bible';
 window.parent.document.getElementById('activeVerse').innerHTML = '<i class="fa">&#xf02d;</i>';
 window.parent.document.getElementById('activeVerseWrap').style.display = '';
 // update book, chapter, verse
@@ -1184,7 +1194,6 @@ window.top.openBibleVerse('toolFrame',b,c,v,window.top.mod);
 function cr(b,c,v) {
 //formatting in bible text, e.g. <p><ref onclick="cr(50,6,4)">Deu 6:4</ref>; <ref onclick="cr(500,3,16)">John 3:16</ref></p>
 if (b < 470 || b > 730) {
-//alert("This website contains New Testament verses only.  For Old Testament verses, try BibleBento.com");
 var MBBkList = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 190, 220, 230, 240, 250, 260, 290, 300, 310, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460];
 var b2 = MBBkList.indexOf(b);
 
@@ -1672,6 +1681,7 @@ return '' +
 '<sub>Partnership with:</sub><br><sup><a href="javascript:void(0)" onclick="window.open(\'https://BibleBento.com\')">BibleBento.com</a> <a href="javascript:void(0)" onclick="window.open(\'https://OpenGNT.com\')">OpenGNT.com</a></sup>' +
 '</h4>' +
 '<p>&nbsp;</p>' +
+'<span id="lastElement2"></span>' +
 '';
 }
 
@@ -2273,7 +2283,7 @@ var BibBk = BibBkList2.indexOf(b);
 var BibBk2 = BibBkList4[BibBk];
 
 document.getElementById('currentVerse').innerHTML = '<ref onclick="xref(' + b + ',' + c + ',' + v + ')">' + BibBk2 + ' ' + c + ':' + v + '</ref><br />' + getRefList();
-document.title = 'Cross-reference - ' + BibBk2 + ' ' + c + ':' + v + ' - BibleBento.com';
+document.title = 'Cross-reference - ' + BibBk2 + ' ' + c + ':' + v + ' - Marvel.bible';
 document.getElementById('e' + bcv).innerHTML = '[<a href="javascript:void(0)" onclick="compareLink(' + b + ',' + c + ',' + v + ')">Verse Comparison</a>]';
 document.getElementById('v' + bcv).style.display = '';
 //document.getElementById('refList' + ont).value = mod;
@@ -2352,7 +2362,7 @@ var url = window.location.pathname;
 var filename = url.substring(url.lastIndexOf('/')+1);
 var patt1 = /[A-Z]+/g;
 var modName = filename.match(patt1);
-document.title = modName + " - BibleBento.com";
+document.title = modName + " - Marvel.bible";
 }
 
 function loadTopicalRef() {
