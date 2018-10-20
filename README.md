@@ -2,7 +2,7 @@
 
 Marvel Bible: Marvellous Bible Resources
 
-Marvel is an online bible application with marvellous high-quality bible resources.
+<a href='http://Marvel.bible'>Marvel.bible</a> is an online bible application with marvellous high-quality bible resources.
 
 Files for developing Marvel.bible are uploaded here.
 
