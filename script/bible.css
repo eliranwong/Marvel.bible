@@ -1,0 +1,417 @@
+@font-face {
+  font-family: 'Ezra SIL';
+  src: url('sileot.ttf');
+}
+
+heb {
+font-family: 'Ezra SIL';
+font-size: 130%;
+}
+
+/* START of Master Control */
+
+div.bhsa {
+direction: rtl;
+border-right: 5px solid #FFD700;
+margin-left: 5%;
+margin-right: 5%;
+padding: 5px 10px 5px 10px;
+}
+
+div.e {
+border-left: 5px solid #FFD700;
+margin-left: 5%;
+margin-right: 5%;
+padding: 5px 10px 5px 10px;
+}
+
+.alignCenter {
+text-align: center;
+}
+
+.refList {
+display: inline-block;
+}
+
+vid:hover, grk:hover, heb:hover {
+cursor: pointer;
+}
+
+ot {
+font-weight: bold;
+font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 0;
+    width: 97.9%;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 35px;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 0px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* End of Master Control */
+
+body {
+    margin-left: 5px;
+    margin-right: 20px;
+    font-size: 130%;
+}
+
+.tt1 {
+    position: relative;
+    display: inline;
+}
+
+.tt1 .tt2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 115%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tt1 .tt2::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.tt1:hover .tt2 {
+	visibility: visible;
+}
+
+vid {
+color: brown;
+vertical-align: super;
+font-size: 70%;
+}
+gloss {
+color: red;
+}
+
+/* unvisited link */
+a:link {
+    color: #0b6078;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #0b6078;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* selected link */
+a:active {
+    color: #0b6078;
+    text-decoration: none;
+}
+
+/* chapter link */
+ch {
+    color: #0b6078;
+}
+
+/* chapter link - hover */
+ch:hover {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+	padding-left: 10px;
+    border: 1px solid #D3D3D3;
+}
+
+text {
+color: #0b6078;
+}
+
+text:hover {
+ color: red;
+ cursor: pointer;
+}
+
+addon {
+color: #0b6078;
+}
+
+addon:hover {
+ color: red;
+ cursor: pointer;
+}
+
+.para1 {
+width: 50%;
+}
+
+.para2 {
+width: 50%;
+}
+
+f {
+color: #4f81b1;
+vertical-align: super;
+font-size: 70%;
+}
+
+m {
+font-size: 90%;
+}
+
+sym {
+color: #4f81b1;
+}
+
+i {
+color: #4f81b1;
+}
+
+dic {
+color: #d1ff92;
+font-size: 80%;
+}
+
+dic:hover {
+cursor: pointer;
+font-size: 80%;
+}
+
+untrans {
+color: #4f81b1;
+font-size: 70%;
+}
+
+grkorder {
+color: #4f81b1;
+font-size: 70%;
+}
+
+grkorder2 {
+color: #4f81b1;
+font-size: 70%;
+}
+
+vb {
+color: red;
+}
+
+pn {
+color: teal;
+}
+
+lin {
+font-style: italic;
+}
+
+qere {
+font-style: italic;
+}
+
+.tt3 {
+    position: relative;
+    display: inline;
+}
+
+.tt3 .tt4 {
+    visibility: hidden;
+    width: 40vw;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 200%;
+}
+
+.tt3 .tt4::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.tt3:hover {
+	visibility: visible;
+	background-color: powderblue;
+}
+
+.tt3:hover .tt4 {
+    visibility: visible;
+}
+
+.tt5 {
+    position: relative;
+    display: inline;
+}
+
+.tt5 .tt6 {
+    visibility: hidden;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -60px;
+    left: 170%;
+}
+
+.tt5 .tt6::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.tt5:hover {
+	visibility: visible;
+	background-color: powderblue;
+}
+
+.tt5:hover .tt6 {
+    visibility: visible;
+}
+
+h4 {
+    text-align: center;
+    color: #354d48;
+}
