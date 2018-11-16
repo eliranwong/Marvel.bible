@@ -22,8 +22,10 @@ newData = re.sub('{\n"bNo": ([0-9]+?),\n"cNo": ([0-9]+?),\n"vText": "(.*?)",\n"v
 newData = re.sub('^0\t0\t0\t.*?\n', r'', newData, flags=re.M)
 
 # separate chapters
+newData = re.sub('^([0-9]+?)\t([0-9]+?)\t0\t', r'-|\n\1\t\2\t0\t', newData, flags=re.M)
 newData = re.sub('^([0-9]+?)\t([0-9]+?)\t1\t', r'-|\n\1\t\2\t1\t', newData, flags=re.M)
 newData = re.sub('\[\n-\|', r'-|', newData, flags=re.M)
+newData = re.sub('^([0-9]+?\t[0-9]+?\t0\t.*?)\n\-\|', r'\1', newData, flags=re.M)
 
 # special treatment for commentary
 newData = re.sub('^([0-9]+?\t[0-9]+?\t[0-9]+?\t)([^\n])', r'＊\n\1\2', newData, flags=re.M)
