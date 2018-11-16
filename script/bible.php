@@ -10,7 +10,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="for devotion, study or study or research.">
+<meta name="description" content="for devotion, study or research.">
 <meta name="author" content="Eliran Wong">
 <meta name="keywords" content="marvel,marvellous,bible,app,interlinear,morphology,strong,original,Hebrew,Greek,BHS,GNT,OpenGNT,NA27,NA28,biblebento,lexicon,linguistic,etcbc,annotation,discourse,analysis">
 
