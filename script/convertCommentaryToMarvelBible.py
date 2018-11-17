@@ -28,6 +28,7 @@ newData = re.sub('\[\n-\|', r'-|', newData, flags=re.M)
 newData = re.sub('^([0-9]+?\t[0-9]+?\t0\t.*?)\n\-\|', r'\1', newData, flags=re.M)
 
 # special treatment for commentary
+newData = re.sub('^([0-9]+?\t[0-9]+?\t[0-9]+?\t)([^\n].*?)\n', r'\1\2<hr>\n', newData, flags=re.M)
 newData = re.sub('^([0-9]+?\t[0-9]+?\t[0-9]+?\t)([^\n])', r'＊\n\1\2', newData, flags=re.M)
 
 p = re.compile('^([0-9]+?\t[0-9]+?\t[0-9]+?\t)(.+?)\n([0-9]+?\t[0-9]+?\t[0-9]+?\t)$', flags=re.M)
@@ -168,6 +169,12 @@ s = p.search(newData)
 while s:
     newData = p.sub(r'<br><br>\n', newData)
     s = p.search(newData)
+
+newData = re.sub('<u><b>([0-9]+?):([0-9]+?)-\1:\2</b></u>', r'<u><b>\1:\2</b></u>', newData, flags=re.M)
+newData = re.sub('<u><b>([0-9]+?):([0-9]+?)-\1:([0-9]+?)</b></u>', r'<u><b>\1:\2-\3</b></u>', newData, flags=re.M)
+newData = re.sub('<hr>\n<br><br>', r'<hr>\n', newData, flags=re.M)
+newData = re.sub('([^\n])(-\|)', r'\1\n\2', newData, flags=re.M)
+newData = re.sub('<hr>(\n\-\|)', r'\1', newData, flags=re.M)
 
 # close file
 
