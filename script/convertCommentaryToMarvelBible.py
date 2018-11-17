@@ -52,6 +52,9 @@ newData = re.sub('^([0-9]+?)\t([0-9]+?)\t([0-9]+?)\t', r'<vid id="v\1.\2.\3" onc
 
 # bible verse reference links
 
+newData = re.sub('<a href=\'ref://([0-9]+?)\.([0-9]+?)\.([0-9]+?);\'>(.*?)</a>', r'<ref onclick="bcv(\1,\2,\3)">\4</ref>', newData, flags=re.M)
+newData = re.sub('<a href="ref://([0-9]+?)\.([0-9]+?)\.([0-9]+?);">(.*?)</a>', r'<ref onclick="bcv(\1,\2,\3)">\4</ref>', newData, flags=re.M)
+
 newData = re.sub('<a href=\'bible://([^\n<>]*?)\.([0-9]+?)\.([0-9]+?)\'>(.*?)</a>', r'<ref onclick="bcv(『\1』,\2,\3)">\4</ref>', newData, flags=re.M)
 
 newData = re.sub('『Gen』', r'1', newData, flags=re.M)
