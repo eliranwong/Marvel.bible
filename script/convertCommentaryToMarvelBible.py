@@ -21,6 +21,14 @@ newData = re.sub('}\n\]', r'},\n-|\n', newData, flags=re.M)
 newData = re.sub('{\n"bNo": ([0-9]+?),\n"cNo": ([0-9]+?),\n"vText": "(.*?)",\n"vNo": ([0-9]+?)\n},', r'\1\t\2\t\4\t\3', newData, flags=re.M)
 newData = re.sub('^0\t0\t0\t.*?\n', r'', newData, flags=re.M)
 
+# remove Introduction entry
+newData = re.sub('^.*?\t0\t<a href=\'book.*?>Introduction</a>\n', r'', newData, flags=re.M)
+newData = re.sub('<a href=\'book://[^\r<>\']*?\'>Introduction</a><hr>', r'', newData, flags=re.M)
+newData = re.sub('<a href=\'book://[^\r<>\']*?\'>Introduction</a><br>', r'', newData, flags=re.M)
+
+# remove duplicated and empty entries
+newData = re.sub(r'^([0-9]+?\t[0-9]+?\t[0-9]+?\t)(.*?)\n\1$', r'\1\2', newData, flags=re.M)
+
 # separate chapters
 newData = re.sub('^([0-9]+?)\t([0-9]+?)\t0\t', r'-|\n\1\t\2\t0\t', newData, flags=re.M)
 newData = re.sub('^([0-9]+?)\t([0-9]+?)\t1\t', r'-|\n\1\t\2\t1\t', newData, flags=re.M)
@@ -170,11 +178,12 @@ while s:
     newData = p.sub(r'<br><br>\n', newData)
     s = p.search(newData)
 
-newData = re.sub('<u><b>([0-9]+?):([0-9]+?)-\1:\2</b></u>', r'<u><b>\1:\2</b></u>', newData, flags=re.M)
-newData = re.sub('<u><b>([0-9]+?):([0-9]+?)-\1:([0-9]+?)</b></u>', r'<u><b>\1:\2-\3</b></u>', newData, flags=re.M)
+newData = re.sub(r'<u><b>([0-9]+?):([0-9]+?)-\1:\2</b></u>', r'<u><b>\1:\2</b></u>', newData, flags=re.M)
+newData = re.sub(r'<u><b>([0-9]+?):([0-9]+?)-\1:([0-9]+?)</b></u>', r'<u><b>\1:\2-\3</b></u>', newData, flags=re.M)
 newData = re.sub('<hr>\n<br><br>', r'<hr>\n', newData, flags=re.M)
 newData = re.sub('([^\n])(-\|)', r'\1\n\2', newData, flags=re.M)
 newData = re.sub('<hr>(\n\-\|)', r'\1', newData, flags=re.M)
+newData = re.sub('\\"', r'"', newData, flags=re.M)
 
 # close file
 

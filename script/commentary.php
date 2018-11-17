@@ -35,13 +35,13 @@ var v = <?php echo $_GET["v"]; ?>;
 
 <w id='w0'></w>
 
-<b><ref onclick="changeText()">bible</ref></b> | <?php include '../chapters/' . $_GET["b"] . '_' . $_GET["c"] . '.html';?>
+<b><ref onclick="changeCommentary()">bible</ref></b> | <?php include '../chapters/' . $_GET["b"] . '_' . $_GET["c"] . '.html';?>
 <hr>
 
 <?php include $_GET["b"] . '_' . $_GET["c"] . '.html';?>
 
 <hr>
-<b><ref onclick="changeText()">bible</ref></b> | <?php include '../chapters/' . $_GET["b"] . '_' . $_GET["c"] . '.html';?>
+<b><ref onclick="changeCommentary()">bible</ref></b> | <?php include '../chapters/' . $_GET["b"] . '_' . $_GET["c"] . '.html';?>
 
 <p>&nbsp;</p>
 <div id="footer"></div>
