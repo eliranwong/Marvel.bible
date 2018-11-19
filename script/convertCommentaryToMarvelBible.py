@@ -188,11 +188,19 @@ newData = re.sub('([^\n])(-\|)', r'\1\n\2', newData, flags=re.M)
 newData = re.sub('<hr>(\n\-\|)', r'\1', newData, flags=re.M)
 newData = re.sub(r'\\"', r'"', newData, flags=re.M)
 
-p = re.compile('(<u><b>[0-9:\-]+?</b></u><br>)(<vid[^\n<>]*?></vid> )', flags=re.M)
+p = re.compile('(<u><b>[0-9:\-]+?</b></u>)<br>(<vid[^\n<>]*?></vid>) ', flags=re.M)
 s = p.search(newData)
 while s:
     newData = p.sub(r'\2\1', newData)
     s = p.search(newData)
+
+p = re.compile('(<u><b>[0-9:\-]+?</b></u>)(<vid[^\n<>]*?></vid>) ', flags=re.M)
+s = p.search(newData)
+while s:
+    newData = p.sub(r'\2\1', newData)
+    s = p.search(newData)
+
+newData = re.sub('(<u><b>[0-9:\-]+?</b></u>)(<vid[^\n<>]*?>)[0-9]+?(</vid>)', r'\2\1\3', newData, flags=re.M)
 
 # close file
 
