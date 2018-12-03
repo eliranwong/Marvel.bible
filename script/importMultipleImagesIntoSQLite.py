@@ -25,7 +25,7 @@ conn.execute('''create table if not exists BDB (
 
 def genimages():
     """Generate example BDB.""" # specify a table name here
-    for imagepath in glob.iglob(os.path.expanduser(U('BDB/*.gif'))): # specify a path here
+    for imagepath in glob.iglob(os.path.expanduser(U('BDB_*'))): # specify a path here; unix command for add prefix for multiple files: for f in * ; do mv -- "$f" "BDB_$f" ; done
         with open(imagepath, 'rb') as f:
             yield imagepath, buffer(f.read())
 
