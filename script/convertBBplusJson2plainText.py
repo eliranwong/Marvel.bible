@@ -1,7 +1,7 @@
 import re
 
-inputFile = 'TextNRS.json'
-outputFile = 'NRS.csv'
+inputFile = 'TextNET.json'
+outputFile = 'NET.csv'
 
 # open file
 
@@ -29,9 +29,6 @@ newData = re.sub('[¶§†‡]', r' ', newData, flags=re.M)
 newData = re.sub('【(.*?)】', r' ', newData, flags=re.M)
 newData = re.sub(r'\\"', r'"', newData, flags=re.M)
 newData = re.sub('$', r' ', newData, flags=re.M)
-
-# format verse number
-newData = re.sub('^([0-9]+?)\t([0-9]+?)\t([0-9]+?)\t', r'\1\t\2\t\3\t<vid id="v\1.\2.\3" onclick="luV(\3)">\3</vid> ', newData, flags=re.M)
 
 # remove extra spaces
 newData = re.sub(' [ ]+?([^ ])', r' \1', newData, flags=re.M)
