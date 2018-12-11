@@ -94,6 +94,9 @@ while s:
     newData = p.sub(r'\1\2', newData)
     s = p.search(newData)
 
+# format bible note
+newData = re.sub("<a class='n' href='dict://([^\n<>']+?)\.([^\n<>']+?)'>(.*?)</a>", r"<ref onclick=\"biblenote('\1','\2')\">\3</ref>", newData, flags=re.M)
+
 # close file
 
 f = open(outputFile,'w')
