@@ -156,6 +156,12 @@ newData = re.sub('," ', ', "', newData, flags=re.M)
 newData = re.sub('〔([0-9]+?)\.([0-9]+?)\.([0-9]+?)〕｛([^\n｛｝]*?)｝', r'<vid id="v\1.\2.\3" onclick="luV(\3)">\4</vid> ', newData, flags=re.M)
 
 # fix words before verse 1
+p = re.compile('\n(<[^v].*?)\n(<vid[^\n<>]*?>.*?</vid> )', flags=re.M)
+s = p.search(newData)
+while s:
+    newData = p.sub(r'\n\2\1', newData)
+    s = p.search(newData)
+
 p = re.compile('\n([^<\-].*?)\n(<vid[^\n<>]*?>.*?</vid> )', flags=re.M)
 s = p.search(newData)
 while s:
@@ -186,6 +192,9 @@ while s:
 
 # remove chapter divider
 newData = re.sub('^\-\|\n', r'', newData, flags=re.M)
+# remove extra spaces
+newData = re.sub(' [ ]+?([^ ])', r' \1', newData, flags=re.M)
+newData = re.sub('&emsp; )', r'\&emsp;', newData, flags=re.M)
 
 # close file
 f = open(outputFile,'w')
