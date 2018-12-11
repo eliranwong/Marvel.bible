@@ -156,6 +156,7 @@ newData = re.sub('," ', ', "', newData, flags=re.M)
 newData = re.sub('〔([0-9]+?)\.([0-9]+?)\.([0-9]+?)〕｛([^\n｛｝]*?)｝', r'<vid id="v\1.\2.\3" onclick="luV(\3)">\4</vid> ', newData, flags=re.M)
 
 # fix words before verse 1
+
 p = re.compile('\n(<[^v].*?)\n(<vid[^\n<>]*?>.*?</vid> )', flags=re.M)
 s = p.search(newData)
 while s:
@@ -194,7 +195,6 @@ while s:
 newData = re.sub('^\-\|\n', r'', newData, flags=re.M)
 # remove extra spaces
 newData = re.sub(' [ ]+?([^ ])', r' \1', newData, flags=re.M)
-newData = re.sub('&emsp; )', r'\&emsp;', newData, flags=re.M)
 
 # close file
 f = open(outputFile,'w')
