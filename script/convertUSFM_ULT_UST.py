@@ -155,6 +155,13 @@ newData = re.sub('," ', ', "', newData, flags=re.M)
 # format verse number
 newData = re.sub('〔([0-9]+?)\.([0-9]+?)\.([0-9]+?)〕｛([^\n｛｝]*?)｝', r'<vid id="v\1.\2.\3" onclick="luV(\3)">\4</vid> ', newData, flags=re.M)
 
+# fix words before verse 1
+p = re.compile('\n([^<\-].*?)\n(<vid[^\n<>]*?>.*?</vid> )', flags=re.M)
+s = p.search(newData)
+while s:
+    newData = p.sub(r'\n\2\1', newData)
+    s = p.search(newData)
+
 # close file
 f = open(outputFile,'w')
 f.write(newData)
