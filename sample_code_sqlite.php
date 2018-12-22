@@ -42,7 +42,7 @@ foreach ($rows as $row) {
 	echo $row['Note'];
 }
 
-// Updating
+// delete record(s)
 $delete = 'DELETE FROM VerseNote WHERE Book = 1 AND Chapter = 1 AND Verse = 1';
 $db->exec($delete);
 
